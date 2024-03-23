@@ -5,21 +5,14 @@
 
   # This one contains whatever you want to overlay
   modifications = final: prev: {
-    librime-lua = (prev.librime.override {
-      plugins = [
-        (prev.fetchFromGitHub {
-          owner = "hchunhui";
-          repo = "librime-lua";
-          rev = "7c297e4d2e08fcdd3e9b2dcae2a42317b9a217ff";
-          sha256 = "sha256-GVfr2fzaQYyfNnjN20YcNfBVB144gZKVEunbX10Mgeg=";
-        })
-      ];
-    }).overrideAttrs (old: {
-      buildInputs = (old.buildInputs or [ ]) ++ [ prev.luajit ];
-    });
-
-    fcitx5-rime-lua = prev.fcitx5-rime.overrideAttrs (old: {
-      buildInputs = [ prev.fcitx5 final.librime-lua ];
+    ott = prev.ott.overrideAttrs (oldAttrs: {
+      version = "0.32";
+      src = prev.fetchFromGitHub {
+        owner = "ott-lang";
+        repo = "ott";
+        rev = "c6b0c2c0843a36a3e19acd6c20138257cb412cf9";
+        hash = "sha256-0mRAUp0FnWabR5J8/771oleg6w+lQWTZw4vmQVl0P4g=";
+      };
     });
   };
 }
