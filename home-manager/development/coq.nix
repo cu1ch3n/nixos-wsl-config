@@ -4,7 +4,7 @@
       coq
       lngen
       metalib
-      ott
+      ott-sweirich
     ];
 
   home.sessionVariables = {
