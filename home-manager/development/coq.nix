@@ -1,5 +1,6 @@
 { pkgs, ... }: {
   home.packages = with pkgs;
+    with nur.repos.chen;
     with coqPackages_8_15; [
       coq
       lngen
