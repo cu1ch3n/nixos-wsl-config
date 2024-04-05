@@ -3,6 +3,7 @@
     ./abella.nix
     ./coq.nix
     ./haskell.nix
+    ./latex.nix
     ./nix.nix
   ];
 }
